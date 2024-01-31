@@ -27,7 +27,7 @@ const Pokedex = () => {
         <button>&gt;</button>
       </div>
       <div className="num-results-container">
-        Results ## - ## of {pokeData.length}
+        Results {currIdx +1} - {currIdx + displayCount} of {pokeData.length}
       </div>
       <div className="pokemon-container">
         {displayedPokemon.map(pokemon => 
