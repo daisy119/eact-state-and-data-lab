@@ -1,7 +1,7 @@
-const UserCard = () => {
+const UserCard = (props) => {
   return ( 
     <>
-    <h2>User Card</h2>
+    <h2>{props.user.name}</h2>
     </>
    );
 }

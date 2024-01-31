@@ -14,7 +14,8 @@ const Users = () => {
       <div className="card-container">
         {/* map the userData to UserCard components here */}
         {users.map(user =>
-          <UserCard key={user.id} />
+        //first user here is prop
+          <UserCard key={user.id} user={user} />
           )}
       </div> 
     </>
