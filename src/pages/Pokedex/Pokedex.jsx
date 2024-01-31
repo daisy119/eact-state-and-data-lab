@@ -10,21 +10,36 @@ const Pokedex = () => {
   const [currIdx, setCurrIdx] = useState(0)
   const [displayedPokemon, setDisplayedPokemon] = useState(filterPokemonData(0))
 
-  function filterPokemonData(newIdx) {
-    //filter pokeData to a new array of 10 pokemon (newIdx+displayCount)
+  function filterPokemonData(newIndex) {
+    //filter pokeData to a new array of 10 pokemon (newIndex+displayCount)
     const filteredData = pokeData.filter((pokemon, idx) => {
       //falsey: 10th = > 10 >= 0 10 !< 0+10
-      return idx >=newIdx && idx < newIdx + displayCount
+      return idx >=newIndex && idx < newIndex + displayCount
     })
     return filteredData
+  }
+  
+  function handleIncreaseCurrIdx() {
+    const newIdx =currIdx +displayCount
+    if (newIdx >= pokeData.length) {
+      return
+    }
+    const filteredPokemonData = filterPokemonData(newIdx)
+    setCurrIdx(newIdx)
+    setDisplayedPokemon(filteredPokemonData)
   }
 
   return ( 
     <>
       <h1>Pokemon List</h1>
       <div className="pagination-container">
-        <button>&lt;</button>
-        <button>&gt;</button>
+        <button id="backward">&lt;</button>
+        <button 
+        id="forward"
+        onClick={handleIncreaseCurrIdx}
+        >
+          &gt;
+        </button>
       </div>
       <div className="num-results-container">
         Results {currIdx +1} - {currIdx + displayCount} of {pokeData.length}
