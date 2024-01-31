@@ -1,3 +1,16 @@
-h4{
-  margin: 3px;
+.address {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.email-phone {
+  text-align: left;
+}
+
+.address {
+  text-align: left;
+}
+
+#yellow {
+  color: yellow;
 }

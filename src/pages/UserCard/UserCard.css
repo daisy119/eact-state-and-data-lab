@@ -1,8 +1,29 @@
 .user-card {
   border: 2px solid turquoise;
   border-radius: 8px;
-  height: 350px;
-  width: 300px;
+  height: 400px;
+  width: 350px;
   text-align: center;
-  padding-top: 20px;
+  padding: 20px 40px;
+}
+
+#contact-btn {
+  background-color:lightcoral;
+  border-radius: 20px;
+  padding: 5px;
+  font-weight: bold;
+  border: none;
+  margin-top: 5px;
+  width: 200px;
+}
+
+#website{
+  border-radius: 20px;
+  padding: 5px;
+  font-weight: bold;
+  border: none;
+  margin-top: 5px;
+  width: 200px;
+  background-color: lightgreen;
+  margin-bottom: 10px;
 }
