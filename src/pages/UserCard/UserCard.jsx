@@ -1,10 +1,14 @@
 import './UserCard.css'
+import ProfileInfo from '../ProfileInfo/ProfileInfo';
+import ContactInfo from '../ContactInfo/ContactInfo';
 
 const UserCard = (props) => {
   return ( 
     <div className="user-card">
-    <img src={props.user.avatar} alt="avatar" />
-    <h2>{props.user.name}</h2>
+      <ProfileInfo profile={props.user} />
+      <ContactInfo contact={props.user} />
+      
+    
     </div>
    );
 }
