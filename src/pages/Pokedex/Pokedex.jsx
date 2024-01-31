@@ -20,7 +20,7 @@ const Pokedex = () => {
   }
   
   function handleIncreaseCurrIdx() {
-    const newIdx =currIdx +displayCount
+    const newIdx =currIdx + displayCount
     if (newIdx >= pokeData.length) {
       return
     }
@@ -29,16 +29,31 @@ const Pokedex = () => {
     setDisplayedPokemon(filteredPokemonData)
   }
 
+  function handleDecreaseCurrIdx() {
+  const newIdx =currIdx - displayCount
+  if (newIdx < 0 ) {
+    return
+  }
+  const filteredPokemonData = filterPokemonData(newIdx)
+  setCurrIdx(newIdx)
+  setDisplayedPokemon(filteredPokemonData)
+  }
+
   return ( 
     <>
       <h1>Pokemon List</h1>
       <div className="pagination-container">
-        <button id="backward">&lt;</button>
+        <button 
+        id="backward"
+        onClick={handleDecreaseCurrIdx}
+        >
+        &lt;
+        </button>
         <button 
         id="forward"
         onClick={handleIncreaseCurrIdx}
         >
-          &gt;
+        &gt;
         </button>
       </div>
       <div className="num-results-container">
