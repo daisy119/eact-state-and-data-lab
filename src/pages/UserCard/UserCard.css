@@ -1,0 +1,8 @@
+.user-card {
+  border: 2px solid turquoise;
+  border-radius: 8px;
+  height: 350px;
+  width: 300px;
+  text-align: center;
+  padding-top: 20px;
+}
