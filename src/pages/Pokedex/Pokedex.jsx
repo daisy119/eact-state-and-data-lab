@@ -42,6 +42,10 @@ const Pokedex = () => {
   return ( 
     <>
       <h1>Pokemon List</h1>
+      <div className="search-container">
+        <div>Search Bar</div>
+        <div>Search Result</div>
+      </div>
       <div className="pagination-container">
         <button 
         id="backward"
