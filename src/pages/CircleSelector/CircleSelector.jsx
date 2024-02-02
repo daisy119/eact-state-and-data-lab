@@ -10,20 +10,24 @@ const CircleSelector = () => {
   const [selections, setSelections] = useState([false, false, false, false])
 
   function handleSelection(selectedIdx) {
+    //set newSelections after mapping
     const newSelections =selections.map((selection,idx) => {
+      //if button or cirle is selected
       if (idx ===selectedIdx){
         return true
       } else {
         return false
       }
     })
+    //update selections state by putting newSelections into setSelections
     setSelections(newSelections)
   }
 
   return ( 
     <main>
-      <Circles selections={selections} />
-      <Selectors selections={selections} />
+      //pass as prop to circles and selectors
+      <Circles handleSelection={handleSelection} selections={selections} />
+      <Selectors handleSelection={handleSelection} selections={selections} />
     </main>
   )
 }

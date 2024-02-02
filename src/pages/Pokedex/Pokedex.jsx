@@ -9,6 +9,7 @@ const Pokedex = () => {
   const displayCount = 10
   const [currIdx, setCurrIdx] = useState(0)
   const [displayedPokemon, setDisplayedPokemon] = useState(filterPokemonData(0))
+  const [searchItems, setSearchItems] = useState([''])
 
   function filterPokemonData(newIndex) {
     //filter pokeData to a new array of 10 pokemon (newIndex+displayCount)
@@ -39,12 +40,22 @@ const Pokedex = () => {
   setDisplayedPokemon(filteredPokemonData)
   }
 
+  //search bar
+  function onChange(e) {
+    const value = e.target.value
+    const searchData = pokeData.filter((pokemon) => pokemon.name.toLowerCase().includes(value.toLowerCase()) ) 
+    console.log(searchData)
+    setSearchItems(searchData)
+  }
+
   return ( 
     <>
       <h1>Pokemon List</h1>
       <div className="search-container">
-        <div>Search Bar</div>
-        <div>Search Result</div>
+        <p>Search:</p>
+        <input onChange={onChange} type="search" />
+        <h3>Results:</h3>
+        {searchItems.map(item => (<div>{item}</div>))}
       </div>
       <div className="pagination-container">
         <button 
