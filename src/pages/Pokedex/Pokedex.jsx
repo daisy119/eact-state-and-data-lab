@@ -28,7 +28,7 @@ const Pokedex = () => {
     }
     //this var is the result of running filterPokemonData(newIdx)
     const filteredPokemonData = filterPokemonData(newIdx)
-    //updaye cuurIdx using setCurreIdx with newIdx
+    //update cuurIdx using setCurreIdx with newIdx
     setCurrIdx(newIdx)
     //update displayedPokemon using setDisplayedPokemon with filteredPokemonData
     setDisplayedPokemon(filteredPokemonData)
@@ -38,13 +38,13 @@ const Pokedex = () => {
     //newIdx is the new starting indox of pokeData 
     //(subtraction bc it is backward)
   const newIdx =currIdx - displayCount
-  //if the newIdx is out of the range then return out of the function
+  //make sure the newIdx is not out of the range 
   if (newIdx < 0 ) {
-    return
+    newIdx = 0
   }
   //this var is the result of running filterPokemonData(newIdx)
   const filteredPokemonData = filterPokemonData(newIdx)
-  //updaye cuurIdx using setCurreIdx with newIdx
+  //update cuurIdx using setCurreIdx with newIdx
   setCurrIdx(newIdx)
   //update displayedPokemon using setDisplayedPokemon with filteredPokemonData
   setDisplayedPokemon(filteredPokemonData)
@@ -84,8 +84,8 @@ const Pokedex = () => {
         </button>
       </div>
       <div className="num-results-container">
-        {/* display the results range */}
-        Results {currIdx +1} - {currIdx + displayCount} of {pokeData.length}
+        {/* display the results within range */}
+        Results {currIdx +1} - {(currIdx + displayCount) < pokeData.length ? currIdx + displayCount : pokeData.length} of {pokeData.length}
       </div>
       <div className="pokemon-container">
         {displayedPokemon.map(pokemon => 
