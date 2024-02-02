@@ -11,7 +11,8 @@ function findClick(idx) {
       {props.selections.map((selection, idx) =>
         <button 
           key={idx}
-          className={`selector-button`}
+          //add conditional rendering
+          className={selection? "selected" : ""}
           onClick={()=>findClick(idx)}
         >
           Button {idx + 1}
