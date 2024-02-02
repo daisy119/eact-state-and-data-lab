@@ -25,7 +25,7 @@ const CircleSelector = () => {
 
   return ( 
     <main>
-      //pass as prop to circles and selectors
+      {/* pass as prop to circles and selectors */}
       <Circles handleSelection={handleSelection} selections={selections} />
       <Selectors handleSelection={handleSelection} selections={selections} />
     </main>
