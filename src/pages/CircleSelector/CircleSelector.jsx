@@ -13,10 +13,12 @@ const CircleSelector = () => {
     //set newSelections after mapping
     const newSelections =selections.map((selection,idx) => {
       //if button or cirle is selected
+      //selected Idx ===idx? true :false
       if (idx ===selectedIdx){
         return true
       } else {
         return false
+        
       }
     })
     //update selections state by putting newSelections into setSelections
@@ -25,7 +27,7 @@ const CircleSelector = () => {
 
   return ( 
     <main>
-      {/* pass as prop to circles and selectors */}
+      {/* pass as props to circles and selectors */}
       <Circles handleSelection={handleSelection} selections={selections} />
       <Selectors handleSelection={handleSelection} selections={selections} />
     </main>

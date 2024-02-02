@@ -15,6 +15,7 @@ const Circles = (props) => {
           //add conditional rendering
           className={selection? "selected" : ""}
           onClick={()=>findClick(idx)}
+          // onClick={()=>props.handleSelection(idx)}
         >
           {idx + 1}
         </div>  
